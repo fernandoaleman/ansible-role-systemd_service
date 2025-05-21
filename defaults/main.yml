@@ -8,3 +8,6 @@ systemd_service_enabled: true
 
 # The systemd service state.
 systemd_service_state: started
+
+# Whether or not to reload the systemd service.
+systemd_service_reload: false

@@ -15,6 +15,12 @@
         name: "{{ systemd_service_name }}"
         state: "{{ systemd_service_state }}"
 
+    - name: Ensure systemd service reloaded {{ systemd_service_name }}
+      when: systemd_service_reload
+      ansible.builtin.systemd:
+        name: "{{ systemd_service_name }}"
+        state: reloaded
+
   rescue:
     - name: Handle failure in managing systemd service {{ systemd_service_name }}
       ansible.builtin.debug:

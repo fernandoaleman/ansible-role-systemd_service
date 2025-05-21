@@ -7,3 +7,4 @@
     - role: "{{ lookup('env', 'MOLECULE_PROJECT_DIRECTORY') }}"
       vars:
         systemd_service_name: example
+        systemd_service_reload: true
