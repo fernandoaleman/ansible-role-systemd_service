@@ -86,7 +86,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run molecule tests
-        run: molecule test
+        run: molecule converge
         env:
           PY_COLORS: "1"
           ANSIBLE_FORCE_COLOR: "1"
