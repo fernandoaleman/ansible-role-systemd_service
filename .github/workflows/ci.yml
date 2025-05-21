@@ -91,3 +91,11 @@ jobs:
           PY_COLORS: "1"
           ANSIBLE_FORCE_COLOR: "1"
           MOLECULE_DISTRO: ${{ matrix.distro }}
+
+      - name: Setup ssh session if Test fails
+        if: ${{ failure() }}
+        uses: lhotari/action-upterm@v1
+        with:
+          limit-access-to-users: fernandoaleman
+          ## If no one connects after 5 minutes, shut down server.
+          wait-timeout-minutes: 5

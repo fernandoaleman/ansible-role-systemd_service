@@ -27,7 +27,7 @@
         name: "{{ systemd_service_name }}"
         state: restarted
 
-  rescue:
-    - name: Handle failure in managing systemd service {{ systemd_service_name }}
-      ansible.builtin.debug:
-        msg: Failed to manage systemd service {{ systemd_service_name }}. Check system logs for more information.
+  # rescue:
+  #   - name: Handle failure in managing systemd service {{ systemd_service_name }}
+  #     ansible.builtin.debug:
+  #       msg: Failed to manage systemd service {{ systemd_service_name }}. Check system logs for more information.
