@@ -9,3 +9,13 @@
       ansible.builtin.systemd:
         name: "{{ systemd_service_name }}"
         enabled: "{{ systemd_service_enabled }}"
+
+    - name: Ensure systemd service started {{ systemd_service_name }}
+      ansible.builtin.systemd:
+        name: "{{ systemd_service_name }}"
+        state: "{{ systemd_service_state }}"
+
+  rescue:
+    - name: Handle failure in managing systemd service {{ systemd_service_name }}
+      ansible.builtin.debug:
+        msg: Failed to manage systemd service {{ systemd_service_name }}. Check system logs for more information.
