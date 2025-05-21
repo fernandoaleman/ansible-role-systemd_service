@@ -12,8 +12,8 @@
       - After=network.target
     systemd_unit_options:
       - ExecStart=/bin/bash -c 'while true; do echo "running"; sleep 60; done'
-      - ExecStop=/bin/kill -TERM $MAINPID
-      - ExecReload=/bin/kill -HUP $MAINPID
+      - ExecStop=/bin/echo "Service is stopping"
+      - ExecReload=/bin/echo "Reload triggered"
       - Restart=always
     systemd_unit_install_options:
       - WantedBy=multi-user.target
