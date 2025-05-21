@@ -2,6 +2,6 @@
 ---
 roles:
   - name: okb.systemd_unit
-    src: git@github.com:1000bulbs/ansible-role-systemd_unit.git
+    src: https://github.com/1000bulbs/ansible-role-systemd_unit.git
     scm: git
     version: master
