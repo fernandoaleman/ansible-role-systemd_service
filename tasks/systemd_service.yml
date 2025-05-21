@@ -21,6 +21,12 @@
         name: "{{ systemd_service_name }}"
         state: reloaded
 
+    - name: Ensure systemd service restarted {{ systemd_service_name }}
+      when: systemd_service_restart
+      ansible.builtin.systemd:
+        name: "{{ systemd_service_name }}"
+        state: restarted
+
   rescue:
     - name: Handle failure in managing systemd service {{ systemd_service_name }}
       ansible.builtin.debug:

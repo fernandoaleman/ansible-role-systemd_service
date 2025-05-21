@@ -8,3 +8,4 @@
       vars:
         systemd_service_name: example
         systemd_service_reload: true
+        systemd_service_restart: true

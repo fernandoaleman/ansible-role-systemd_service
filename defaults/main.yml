@@ -11,3 +11,6 @@ systemd_service_state: started
 
 # Whether or not to reload the systemd service.
 systemd_service_reload: false
+
+# Whether or not to restart the systemd service.
+systemd_service_restart: false
